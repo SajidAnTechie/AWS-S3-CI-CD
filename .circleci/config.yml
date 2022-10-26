@@ -21,10 +21,10 @@ jobs:
             npm install
             npm run build
 
-            # Update ECS service
+            # Update AWS S3
             aws s3 sync build s3://s3.sajid.bibek-mishra.com.np
 workflows:
   version: 2
-  deploy_ecs:
+  deploy_s3:
     jobs:
       - deploy
