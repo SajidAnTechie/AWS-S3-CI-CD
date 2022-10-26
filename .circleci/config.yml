@@ -1,0 +1,30 @@
+
+version: 2
+general:
+  branches:
+    only:
+      - master
+jobs:
+  deploy:
+    machine:
+      image: ubuntu-2004:202107-02
+    steps:
+      - checkout
+      - run:
+          name: Build and Deploy to AWS S#
+          command: |
+            # Install aws cli
+            sudo apt update -y
+            sudo apt install awscli -y
+
+            # Install and Build
+            npm install
+            npm run Build
+
+            # Update ECS service
+            aws s3 sync build s3://s3.sajid.bibek-mishra.com.np
+workflows:
+  version: 2
+  deploy_ecs:
+    jobs:
+      - deploy
