@@ -19,7 +19,7 @@ jobs:
 
             # Install and Build
             npm install
-            npm run Build
+            npm run build
 
             # Update ECS service
             aws s3 sync build s3://s3.sajid.bibek-mishra.com.np
