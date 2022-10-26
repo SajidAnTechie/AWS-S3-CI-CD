@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          DevOps-Part2 || 2022
+          DevOps Training Part-2 || 2022
         </p>
         <p>
           AWS S3 Example
